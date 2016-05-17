@@ -58,7 +58,8 @@ class FaceViewController: UIViewController
 	}
 	
 	@IBAction func changeBrows(recognizer: UIRotationGestureRecognizer) {
-		guard abs(recognizer.rotation) > 0.1 else { return }
+		let minimumRotationForChangeBrows: CGFloat = 0.1
+		guard abs(recognizer.rotation) > minimumRotationForChangeBrows else { return }
 		switch recognizer.state {
 		case .Changed, .Ended:
 			if recognizer.rotation > 0 {
