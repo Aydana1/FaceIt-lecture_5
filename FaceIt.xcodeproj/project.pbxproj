@@ -7,21 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EA343D841CEB573D00ED534A /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA343D831CEB573D00ED534A /* FacialExpression.swift */; };
 		EAA3B6B51CEA217100F8103C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3B6B41CEA217100F8103C /* AppDelegate.swift */; };
-		EAA3B6B71CEA217100F8103C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3B6B61CEA217100F8103C /* ViewController.swift */; };
+		EAA3B6B71CEA217100F8103C /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3B6B61CEA217100F8103C /* FaceViewController.swift */; };
 		EAA3B6BA1CEA217100F8103C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA3B6B81CEA217100F8103C /* Main.storyboard */; };
 		EAA3B6BC1CEA217100F8103C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAA3B6BB1CEA217100F8103C /* Assets.xcassets */; };
 		EAA3B6BF1CEA217100F8103C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAA3B6BD1CEA217100F8103C /* LaunchScreen.storyboard */; };
+		EAA3B6C81CEA222200F8103C /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA3B6C71CEA222200F8103C /* FaceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EA343D831CEB573D00ED534A /* FacialExpression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
 		EAA3B6B11CEA217100F8103C /* FaceIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAA3B6B41CEA217100F8103C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EAA3B6B61CEA217100F8103C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAA3B6B61CEA217100F8103C /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		EAA3B6B91CEA217100F8103C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EAA3B6BB1CEA217100F8103C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EAA3B6BE1CEA217100F8103C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EAA3B6C01CEA217100F8103C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EAA3B6C71CEA222200F8103C /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +58,24 @@
 		EAA3B6B31CEA217100F8103C /* FaceIt */ = {
 			isa = PBXGroup;
 			children = (
-				EAA3B6B41CEA217100F8103C /* AppDelegate.swift */,
-				EAA3B6B61CEA217100F8103C /* ViewController.swift */,
+				EAA3B6B61CEA217100F8103C /* FaceViewController.swift */,
 				EAA3B6B81CEA217100F8103C /* Main.storyboard */,
+				EAA3B6C71CEA222200F8103C /* FaceView.swift */,
+				EA343D831CEB573D00ED534A /* FacialExpression.swift */,
+				EAA3B6C61CEA218A00F8103C /* Supporting Files */,
+			);
+			path = FaceIt;
+			sourceTree = "<group>";
+		};
+		EAA3B6C61CEA218A00F8103C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EAA3B6B41CEA217100F8103C /* AppDelegate.swift */,
 				EAA3B6BB1CEA217100F8103C /* Assets.xcassets */,
 				EAA3B6BD1CEA217100F8103C /* LaunchScreen.storyboard */,
 				EAA3B6C01CEA217100F8103C /* Info.plist */,
 			);
-			path = FaceIt;
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +150,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAA3B6B71CEA217100F8103C /* ViewController.swift in Sources */,
+				EAA3B6B71CEA217100F8103C /* FaceViewController.swift in Sources */,
+				EA343D841CEB573D00ED534A /* FacialExpression.swift in Sources */,
 				EAA3B6B51CEA217100F8103C /* AppDelegate.swift in Sources */,
+				EAA3B6C81CEA222200F8103C /* FaceView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,10 +268,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FaceIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DeimanTechnology.FaceIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -263,10 +282,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FaceIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DeimanTechnology.FaceIt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -289,6 +311,7 @@
 				EAA3B6C51CEA217100F8103C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
