@@ -72,6 +72,7 @@ class FaceViewController: UIViewController
 		}
 	}
 	
+	
 	private let mouthCurvatures: [FacialExpression.Mouth : Double] =
 		[.Frown: -1.0, .Grin: 0.5, .Smile: 1.0, .Smirk: -0.5, .Neutral: 0.0 ]
 	
