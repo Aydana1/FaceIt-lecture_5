@@ -10,13 +10,14 @@ import UIKit
 
 class FaceViewController: UIViewController
 {
-	
-	private var expression = FacialExpression(eyes: .Open, eyeBrows: .Normal, mouth: .Frown ) {
+	// MARK: model
+	var expression = FacialExpression(eyes: .Open, eyeBrows: .Normal, mouth: .Frown ) {
 		didSet {
-			updateUI()
+			updateUI()	// model has changed, so update UI
 		}
 	}
 	
+	// MARK: view
 	@IBOutlet private weak var faceView: FaceView! {
 		didSet {
 			faceView.addGestureRecognizer(UIPinchGestureRecognizer(
@@ -35,8 +36,12 @@ class FaceViewController: UIViewController
 			)
 			sadderSwipeGestureRecognizer.direction = .Up
 			faceView.addGestureRecognizer(sadderSwipeGestureRecognizer)
-			updateUI()
 		}
+	}
+	
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		updateUI()
 	}
 	
 	func increaseHappiness() {
@@ -47,7 +52,7 @@ class FaceViewController: UIViewController
 		expression.mouth = expression.mouth.sadderMouth()
 	}
 	
-	@IBAction func toggleEyes(recognizer: UITapGestureRecognizer) {
+	@IBAction private func toggleEyes(recognizer: UITapGestureRecognizer) {
 		if recognizer.state == .Ended {
 			switch expression.eyes {
 			case .Open: expression.eyes = .Closed
@@ -57,7 +62,7 @@ class FaceViewController: UIViewController
 		}
 	}
 	
-	@IBAction func changeBrows(recognizer: UIRotationGestureRecognizer) {
+	@IBAction private func changeBrows(recognizer: UIRotationGestureRecognizer) {
 		let minimumRotationForChangeBrows: CGFloat = 0.1
 		guard abs(recognizer.rotation) > minimumRotationForChangeBrows else { return }
 		switch recognizer.state {
@@ -80,6 +85,7 @@ class FaceViewController: UIViewController
 		[.Relaxed: 0.5, .Furrowed: -0.5, .Normal: 0.0]
 	
 	private func updateUI() {
+		guard faceView != nil else { return }
 		switch expression.eyes {
 		case .Open: 	faceView.eyesOpen = true
 		case .Closed: 	faceView.eyesOpen = false
